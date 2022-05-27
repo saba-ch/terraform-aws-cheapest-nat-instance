@@ -15,7 +15,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_nat_instance"></a> [nat\_instance](#module\_nat\_instance) | ../../source | n/a |
+| <a name="module_nat_instance"></a> [nat\_instance](#module\_nat\_instance) | ../../ | n/a |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | terraform-aws-modules/vpc/aws | n/a |
 
 ## Resources
