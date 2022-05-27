@@ -20,6 +20,37 @@ module "nat_instance" {
 }
 ```
 
+## Create On Demand Instance
+
+Even though this module creates highly available self healing nat instance, in production we don't want any kind of downtime. When we are using spot instances we are accepting the risk that AWS might want to reclaim the instance for any reason. To eliminate this risk we can use on demand instances instead which guarantees 99.99 SLA. 
+
+```hcl
+module "nat_instance" {
+  source = "../../source"
+
+  public_subnet_id = module.vpc.public_subnets[0]
+  private_subnets = local.private_subnets
+  private_route_tables = module.vpc.private_route_table_ids
+  prefix = var.prefix
+  vpc_id = module.vpc.vpc_id
+  create_nat = true
+  on_demand = true
+  putin_khuylo = true
+}
+```
+
+## Costs
+
+|solution                           |network  |cost/GB|cost/hour**|cost/month**|
+|-----------------------------------|---------|-------|-----------|------------|
+|NAT Gateway                   |5-45 Gbps|  0.052|0.052      |37.44 without network charges |
+|NAT Instance (t3a.nano)       |0-5  Gbps|0-0.09 (out)|0.0047     |3.384 without network charges |
+|NAT Instance (t3a.nano) (spot)|0-5  Gbps|0-0.09 (out)|0.0017*    |1.22* without network charges|
+
+\* variable costs.
+
+\*\* region eu-central-1.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
