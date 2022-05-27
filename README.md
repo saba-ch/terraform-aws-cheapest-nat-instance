@@ -22,7 +22,7 @@ module "nat_instance" {
 
 ## Create On Demand Instance
 
-Even though this module creates highly available self healing nat instance, in production we don't want any kind of downtime. When we are using spot instances we are accepting the risk that AWS might want to reclaim the instance for any reason. To eliminate this risk we can use on demand instances instead which guarantees 99.99 SLA. 
+Even though this module creates highly available self healing nat instance, in production we don't want any kind of downtime. When we are using spot instances we are accepting the risk that AWS might want to reclaim the instance for any reason. To eliminate this risk we can use on demand instances instead which guarantees 99.99% SLA. 
 
 ```hcl
 module "nat_instance" {
