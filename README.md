@@ -108,4 +108,4 @@ Module is created and maintained by [Saba Tchikhinashvili](https://github.com/sa
 
 ## License
 
-Apache 2 Licensed. See [LICENSE](https://github.com/saba-ch/cheapest-nat-instance/blob/main/LICENSE) for full details.
+Apache 2 Licensed. See [LICENSE](https://github.com/saba-ch/terraform-aws-cheapest-nat-instance/blob/main/LICENSE) for full details.
