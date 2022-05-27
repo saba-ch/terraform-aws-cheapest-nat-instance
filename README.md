@@ -1,4 +1,4 @@
-# AWS Cheapest NAT Instace Module
+# AWS Cheapest NAT Instance Module
 
 Terraform module which creates cheapest nat instance on aws.
 
