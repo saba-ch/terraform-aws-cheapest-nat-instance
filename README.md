@@ -8,7 +8,7 @@ Terraform module which creates cheapest nat instance on aws.
 
 ```hcl
 module "nat_instance" {
-  source = "../../source"
+  source = "saba-ch/cheapest-nat-instance/aws"
 
   public_subnet_id = module.vpc.public_subnets[0]
   private_subnets = local.private_subnets
@@ -26,7 +26,7 @@ Even though this module creates highly available self healing nat instance, in p
 
 ```hcl
 module "nat_instance" {
-  source = "../../source"
+  source = "saba-ch/cheapest-nat-instance/aws"
 
   public_subnet_id = module.vpc.public_subnets[0]
   private_subnets = local.private_subnets

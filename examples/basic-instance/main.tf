@@ -102,7 +102,7 @@ resource "aws_instance" "main" {
 }
 
 module "nat_instance" {
-  source = "../../source"
+  source = "../../"
 
   public_subnet_id = module.vpc.public_subnets[0]
   private_subnets = local.private_subnets
