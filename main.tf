@@ -46,6 +46,8 @@ resource "aws_autoscaling_group" "main" {
 resource "aws_launch_template" "main" {
   name = "${var.prefix}_nat_instance_template"
 
+  count = local.create_nat ? 1 : 0
+
   iam_instance_profile {
     name = aws_iam_instance_profile.main[0].name
   }
